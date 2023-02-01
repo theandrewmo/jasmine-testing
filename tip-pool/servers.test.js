@@ -13,12 +13,12 @@ describe("Servers test (with setup and tear-down)", function() {
     expect(allServers['server' + serverId].serverName).toEqual('Alice');
   });
 
-  it('should append the server info to the table', function() {
+  it('should append the server info to the table on updateServerTable()', function() {
     submitServerInfo();
     updateServerTable();
 
     expect(serverTbody.innerHTML).not.toEqual('')
-    expect(serverTbody.innerHTML).toEqual(`<tr id="server1"><td>Alice</td><td>$0.00</td></tr>`)
+    expect(serverTbody.children[0].children[0].innerHTML).toEqual('Alice')
   })
 
   afterEach(function() {

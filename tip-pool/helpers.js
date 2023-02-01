@@ -21,6 +21,15 @@ function calculateTipPercent(billAmt, tipAmt) {
 function appendTd(tr, value) {
   let newTd = document.createElement('td');
   newTd.innerText = value;
-
   tr.append(newTd);
+}
+
+// expects a table row element, creates a 'td' element with value 'X', when clicked will delete corresponding table row
+function appendDeleteBtn(tr) {
+  let td = document.createElement('td')
+  td.innerHTML = 'X'
+  td.addEventListener('click', function removeParent() {
+    td.parentElement.remove()
+  })
+  tr.append(td);
 }

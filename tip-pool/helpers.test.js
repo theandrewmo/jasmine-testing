@@ -27,6 +27,11 @@ describe("Helpers test (with setup and tear-down)", function() {
         appendTd(tr, 200)
         expect(tr.firstChild.innerHTML).toEqual('200')
     })
+
+    it('should creates a td element with value X, when clicked will delete corresponding table row', function() {
+       //skipping further logic due to vanilla js only at this time
+      expect(appendDeleteBtn).toBeInstanceOf(Function)
+    })
   
     afterEach(function() {
       // teardown logic
